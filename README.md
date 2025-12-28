@@ -254,6 +254,8 @@ This project demonstrates how data analysis and visualization can uncover valuab
 
 Author
 Banapuram Mahidhar
+
 banapurammahidhar@gmail.com
+
 www.linkedin.com/in/banapuram-mahidhar-77914133a
 

@@ -252,7 +252,8 @@ print(sales_profit_by_segment["sales_to_profit_ratio"])
 This project demonstrates how data analysis and visualization can uncover valuable insights from raw E-Commerce data and support data-driven business decisions.
 
 
-Author
+### Author
+
 Banapuram Mahidhar
 
 banapurammahidhar@gmail.com

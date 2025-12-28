@@ -170,3 +170,90 @@ fig = px.bar(
 )
 fig.show()
 ```
+
+### 6.Analyze the sales and profit by customer segment
+```python
+sales_profit_by_segment = (
+    df.groupby("Segment")
+      .agg({"Sales": "sum", "Profit": "sum"})
+      .reset_index()
+)
+
+colors_Palette = colors.qualitative.Pastel
+
+fig = go.Figure()
+
+fig.add_trace(
+    go.Bar(
+        x=sales_profit_by_segment["Segment"],
+        y=sales_profit_by_segment["Sales"],
+        name="Sales",
+        marker_color=colors_Palette[0]
+    )
+)
+
+fig.add_trace(
+    go.Bar(
+        x=sales_profit_by_segment["Segment"],
+        y=sales_profit_by_segment["Profit"],
+        name="Profit",
+        marker_color=colors_Palette[1]
+    )
+)
+
+fig.update_layout(
+    title="Sales and Profit Analysis by Customer Segment",
+    xaxis_title="Customer Segment",
+    yaxis_title="Amount",
+    barmode="group"
+)
+
+fig.show()
+
+```
+
+### 7. Analyze the sales to profit ratio
+
+```python
+
+sales_profit_by_segment = df.groupby("Segment").agg({"Sales":"sum","Profit":"sum"}).reset_index()
+sales_profit_by_segment["sales_to_profit_ratio"]=sales_profit_by_segment["Sales"]/sales_profit_by_segment["Profit"]
+print(sales_profit_by_segment["sales_to_profit_ratio"])
+
+```
+
+### Key Analysis Performed
+
+📅 Monthly Sales Trend Analysis
+
+🏷️ Category & Sub-Category Sales Comparison
+
+💰 Profit Analysis (Monthly, Category, Sub-Category)
+
+👥 Customer Segment Analysis
+
+📈 Sales vs Profit Ratio
+
+
+
+### 📈 Insights & Outcomes
+
+ **Identified peak and low sales months**
+
+ **Discovered top-performing and underperforming categories**
+
+**Analyzed customer segments contributing most to profit**
+
+**Evaluated efficiency using sales-to-profit ratio**
+
+
+### Conclusion
+
+This project demonstrates how data analysis and visualization can uncover valuable insights from raw E-Commerce data and support data-driven business decisions.
+
+
+Author
+Banapuram Mahidhar
+banapurammahidhar@gmail.com
+www.linkedin.com/in/banapuram-mahidhar-77914133a
+
